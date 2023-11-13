@@ -28,7 +28,7 @@ namespace Clicker.net
         private void handleMouseEvent(MouseEventExtArgs e)
         {
             label1.Text = "Ostatnio kliknięty myszek: " +e.Button.ToString() + " - timestamp: " + e.Timestamp;
-            ws.Send("{\"mouse\": \"" + e.Button.ToString() + "\"}");
+            ws.Send("{\"event\":\"mouseClick\", \"details\": {\"button\": \"" + e.Button.ToString() + "\", \"timestamp\":\"" + e.Timestamp + "\"}}");
         }
 
         private void button1_Click(object sender, EventArgs e)
